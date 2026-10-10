@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
   if (!row.name || !row.contact) return res.status(400).json({ error: '이름과 연락처를 적어 주세요' });
   if (!row.wish_date) return res.status(400).json({ error: '희망 날짜를 골라 주세요' });
   if (!row.consent) return res.status(400).json({ error: '개인정보 수집·이용에 동의해 주세요' });
-  const r = await fetch(`${SB_URL}/rest/v1/inquiries`, { method: 'POST', headers: { ...sbHeaders(), Prefer: 'return=minimal' }, body: JSON.stringify(row) });
+  const r = await fetch(`${SB_URL}/rest/v1/saessak_inquiries`, { method: 'POST', headers: { ...sbHeaders(), Prefer: 'return=minimal' }, body: JSON.stringify(row) });
   if (!r.ok) return res.status(500).json({ error: '저장하지 못했어요. 잠시 뒤 다시 시도해 주세요.' });
   return res.status(200).json({ ok: true });
 };

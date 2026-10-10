@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>새싹 공방 · 아이와 함께하는 원데이 클래스</title>
+  <meta name="description" content="아이와 함께 오는 가족을 위한 새싹 공방 원데이 클래스. 수업 안내를 보고 바로 예약 신청하세요.">
+  <meta property="og:title" content="새싹 공방 원데이 클래스">
+  <meta property="og:description" content="아이와 나란히 앉아 하나씩 만들어 가는 하루. 수업 예약 신청을 받고 있어요.">
+  <meta name="theme-color" content="#CAD7A6">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 30V15' stroke='%231E4A2C' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 17C9 17 5 12 5 6c7 0 11 5 11 11zM16 14c0-6 4-10 11-10 0 6-4 10-11 10z' fill='%235E8F3A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#book">예약 신청으로 바로 가기</a>
+
+  <header class="top">
+    <a class="logo" href="#" aria-label="새싹 공방 처음으로">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 30V15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M16 17C9 17 5 12 5 6c7 0 11 5 11 11zM16 14c0-6 4-10 11-10 0 6-4 10-11 10z" fill="#5E8F3A"/></svg>
+      새싹 공방
+    </a>
+    <nav class="menu" aria-label="주요 메뉴">
+      <a href="#guide">수업 안내</a>
+      <a href="#photos">사진</a>
+      <a href="#way">오시는 길</a>
+    </nav>
+    <a class="btn btn-seed btn-small" href="#book">예약 신청</a>
+  </header>
+
+  <main>
+    <!-- 첫 화면: 흙 위로 새싹이 자라는 장면 하나 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <svg class="sprout" viewBox="0 0 200 220" aria-hidden="true">
+        <path class="stem" d="M100 220 C100 180 96 150 100 105" />
+        <path class="leaf leaf-l" d="M100 118 C70 120 44 100 40 66 C74 64 98 86 100 118 Z" />
+        <path class="leaf leaf-r" d="M100 104 C104 70 130 46 168 46 C166 82 138 104 100 104 Z" />
+      </svg>
+      <h1 id="hero-title" class="wordmark"><span>새싹</span> <span>공방</span></h1>
+      <div class="soil">
+        <p class="lead">아이와 나란히 앉아<br>하나씩 만들어 가는 원데이 클래스</p>
+        <div class="hero-actions">
+          <a class="btn btn-seed" href="#book">수업 예약 신청</a>
+          <a class="btn btn-ghost" data-link="kakao" href="#" target="_blank" rel="noopener" hidden>카카오톡으로 묻기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 부모님이 궁금한 네 가지: 씨앗 봉투 뒷면 안내표 -->
+    <section id="guide" class="guide">
+      <div class="wrap">
+        <h2 class="title">수업 안내</h2>
+        <p class="sub" data-fact-line="lesson"></p>
+        <div class="packet">
+          <dl>
+            <div><dt>가격</dt><dd data-fact="price"></dd></div>
+            <div><dt>몇 살부터</dt><dd data-fact="age"></dd></div>
+            <div><dt>날짜·시간</dt><dd data-fact="time"></dd></div>
+            <div><dt>위치·주차</dt><dd><span data-fact="place"></span><small data-fact-small="parking"></small></dd></div>
+          </dl>
+          <p class="packet-note">더 궁금한 점은 예약 신청에 남겨 주시거나 카카오톡으로 물어봐 주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 사진 -->
+    <section id="photos" class="photos">
+      <div class="wrap">
+        <h2 class="title">아이들이 만든 것들</h2>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <!-- 후기: 실제 후기가 있을 때만 보인다 -->
+    <section id="reviews" class="reviews" hidden>
+      <div class="wrap">
+        <h2 class="title">다녀간 가족의 말</h2>
+        <ul class="review-list" id="review-list"></ul>
+      </div>
+    </section>
+
+    <!-- 블로그·유튜브 -->
+    <section id="more" class="more" hidden>
+      <div class="wrap">
+        <h2 class="title">수업 기록 더 보기</h2>
+        <div class="video" id="video" hidden></div>
+        <div class="more-links">
+          <a class="more-link" data-link="blog" href="#" target="_blank" rel="noopener" hidden>
+            <strong>블로그</strong><span>수업 후기와 작품 사진을 글로 남겨 두었어요</span>
+          </a>
+          <a class="more-link" data-link="youtube" href="#" target="_blank" rel="noopener" hidden>
+            <strong>유튜브</strong><span>수업하는 모습을 영상으로 볼 수 있어요</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 오시는 길 -->
+    <section id="way" class="way">
+      <div class="wrap">
+        <h2 class="title">오시는 길</h2>
+        <p class="way-place" data-fact="place"></p>
+        <p class="way-parking"><strong>주차</strong> <span data-fact="parking"></span></p>
+        <a class="btn btn-line" data-link="mapUrl" href="#" target="_blank" rel="noopener" hidden>지도에서 보기</a>
+      </div>
+    </section>
+
+    <!-- 예약 신청 -->
+    <section id="book" class="book" aria-labelledby="book-title">
+      <div class="wrap book-wrap">
+        <div class="book-intro">
+          <h2 id="book-title" class="title">수업 예약 신청</h2>
+          <p>이름과 연락처, 원하는 날짜를 남겨 주시면 확인 후 연락드려요. 결제는 신청 단계에서 하지 않아요.</p>
+        </div>
+        <form id="book-form" class="form" novalidate>
+          <label>
+            <span>이름</span>
+            <input name="name" autocomplete="name" required maxlength="50" placeholder="보호자 이름">
+          </label>
+          <label>
+            <span>연락처</span>
+            <input name="contact" type="tel" autocomplete="tel" inputmode="tel" required maxlength="100" placeholder="010-0000-0000">
+          </label>
+          <label>
+            <span>희망 날짜</span>
+            <input name="wish_date" type="date" required>
+          </label>
+          <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>(필수) 개인정보 수집·이용에 동의해요. 이름·연락처·희망 날짜를 수업 예약 연락에만 쓰고, 연락이 끝나면 지워요.</span>
+          </label>
+          <button class="btn btn-seed btn-block" type="submit">예약 신청하기</button>
+          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-wrap">
+      <p class="foot-name">새싹 공방</p>
+      <nav class="foot-links" aria-label="바깥 연결">
+        <a data-link="kakao" href="#" target="_blank" rel="noopener" hidden>카카오톡</a>
+        <a data-link="blog" href="#" target="_blank" rel="noopener" hidden>블로그</a>
+        <a data-link="youtube" href="#" target="_blank" rel="noopener" hidden>유튜브</a>
+      </nav>
+      <p class="foot-copy">© 2026 새싹 공방</p>
+    </div>
+  </footer>
+
+  <!-- 휴대폰: 아래에 늘 떠 있는 버튼 -->
+  <div class="dock" aria-label="빠른 연결">
+    <a class="btn btn-seed" href="#book">예약 신청</a>
+    <a class="btn btn-ghost-dark" data-link="kakao" href="#" target="_blank" rel="noopener" hidden>카톡 문의</a>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <script src="assets/config.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
